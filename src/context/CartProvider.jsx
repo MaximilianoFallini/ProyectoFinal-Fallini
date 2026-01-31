@@ -6,34 +6,30 @@ function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-
     const existingProduct = cart.find(item => item.id === product.id);
-
     if (existingProduct) {
       const updatedCart = cart.map(item =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
-
       setCart(updatedCart);
-
     } else {
-
       setCart([...cart, { ...product, quantity: 1 }]);
-
     }
   };
 
   const removeOne = (id) => {
-
     const updatedCart = cart.map(item =>
       item.id === id
         ? { ...item, quantity: item.quantity - 1 }
         : item
     ).filter(item => item.quantity > 0);
-
     setCart(updatedCart);
+  };
+
+  const clearCart = () => {
+    setCart([]); // ✅ Vacía todo el carrito
   };
 
   const getTotal = () => {
@@ -51,6 +47,7 @@ function CartProvider({ children }) {
       cart,
       addToCart,
       removeOne,
+      clearCart, // ✅ agregamos clearCart aquí
       getTotal,
       getQuantity
     }}>

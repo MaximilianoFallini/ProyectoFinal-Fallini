@@ -4,10 +4,10 @@ import { createOrder } from "../firebase/db";
 
 function CartContainer() {
 
-  const { cart, removeOne, getTotal } = useContext(CartContext);
+  const { cart, removeOne, getTotal, clearCart } = useContext(CartContext);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -17,8 +17,7 @@ function CartContainer() {
 
     const buyer = { name, email, phone, city, address };
 
-    createOrder(buyer, cart, Number(getTotal()))
-
+    createOrder(buyer, cart, Number(getTotal()));
   }
 
   if (cart.length === 0) {
@@ -80,6 +79,14 @@ function CartContainer() {
           <h3 className="text-xl font-bold">
             Total: ${getTotal().toFixed(2)}
           </h3>
+
+          {/* BOTÓN VACIAR CARRITO */}
+          <button
+            onClick={() => clearCart()}
+            className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mt-3"
+          >
+            Vaciar carrito
+          </button>
 
         </div>
 
