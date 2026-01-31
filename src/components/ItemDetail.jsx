@@ -16,7 +16,7 @@ function ItemDetail ({ detail }) {
     return (
         <div className="min-h-screen flex items-center justify-center px-10">
 
-      <div className="bg-neutral-900 grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl w-full bg-base-100 shadow-xl rounded-2xl p-10">
+      <div className="bg-black grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl w-full shadow-xl rounded-2xl p-10">
 
         {/* imagen */}
         <div className="flex justify-center items-center">

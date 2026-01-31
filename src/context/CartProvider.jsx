@@ -29,7 +29,7 @@ function CartProvider({ children }) {
   };
 
   const clearCart = () => {
-    setCart([]); // ✅ Vacía todo el carrito
+    setCart([]); 
   };
 
   const getTotal = () => {
@@ -47,7 +47,7 @@ function CartProvider({ children }) {
       cart,
       addToCart,
       removeOne,
-      clearCart, // ✅ agregamos clearCart aquí
+      clearCart,
       getTotal,
       getQuantity
     }}>

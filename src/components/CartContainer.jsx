@@ -30,15 +30,13 @@ function CartContainer() {
 
   return (
     <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      {/* LISTA PRODUCTOS */}
-      <div className="border rounded-lg p-4 flex flex-col h-[500px]">
+     
+      <div className="border rounded-lg p-4 flex flex-col h-500px">
 
         <h2 className="text-xl font-semibold mb-3">
           Productos en el carrito
         </h2>
 
-        {/* SCROLL */}
         <div className="flex-1 overflow-y-auto space-y-4 pr-2">
 
           {cart.map(item => (
@@ -73,14 +71,12 @@ function CartContainer() {
 
         </div>
 
-        {/* TOTAL FIJO */}
         <div className="border-t pt-4 mt-4">
 
           <h3 className="text-xl font-bold">
             Total: ${getTotal().toFixed(2)}
           </h3>
 
-          {/* BOTÓN VACIAR CARRITO */}
           <button
             onClick={() => clearCart()}
             className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mt-3"
@@ -92,7 +88,6 @@ function CartContainer() {
 
       </div>
 
-      {/* FORMULARIO */}
       <div className="border rounded-lg p-4">
 
         <h2 className="text-xl font-semibold mb-4">
